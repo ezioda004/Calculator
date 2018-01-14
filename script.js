@@ -13,6 +13,13 @@ $(document).ready(function(){
         
         $(".display").text(x);
     });
+    $("#back").on("click", function(event){
+        event.preventDefault();
+        let x = $(".display").text();
+        console.log(x);
+        $(".display").text(x.substring(0, x.length-1));
+
+    })
     $(".operator").on("click", function(event){
         event.preventDefault();
         let firstVal = $(".display").text();
@@ -77,7 +84,8 @@ $(document).ready(function(){
         $(".display").text("  ");
         
     });
-    $("#result").on("click", function(){
+    $("#result").on("click", function(event){
+        event.preventDefault();
         savedVal.push($(".display").text());
         // console.log(eval(savedVal.join("")));
         $(".display").text(Math.round(eval(savedVal.join(""))*100)/100);
@@ -87,6 +95,7 @@ $(document).ready(function(){
         
     });
     $("#reset").on("click", function(){
+        event.preventDefault();
         savedVal = [];
         $(".display").text("0");
     });
