@@ -1,35 +1,63 @@
 body {
     background: #131313;
     color: white;
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+}
+h1 {
+    margin-top: 50px;
+    font-size: 70px;
+    text-shadow: 0px 0px 10px greenyellow,
+                 0px 0px 20px greenyellow,
+                 0px 0px 30px greenyellow,
+                 0px 0px 40px greenyellow;
 }
 .main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 100px;
+    /* justify-content: center; */
+    /* margin-top: 100px; */
+    margin-left: auto;
+    margin-right: auto;
+    width: 510px;
+    border: 2px solid #243238e8;
 }
 .main ul:last-child {
     justify-content: flex-start;
 }
 li {
     border: 2px white solid;
-    padding: 20px;
+    /* padding: 10px; */
     margin: 5px;
     display: inline-block;
     color: white;
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 70px;
 }
 div ul {
     /* margin-left: auto; */
     flex-basis: 100%;
+    padding: 0 2px;
 }
-div ul:last-child{
-    flex-basis: 22%;
+div ul:nth-child(5) ,div ul:last-child{
+    flex-basis: 56%;
     align-self: flex-start;
+    margin-right: auto;
+    margin-left: 65px;
 }
-a { font-size: 1.5em;
+div ul:nth-child(6){
+    flex-basis: 31%;
+}
+a {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 12px 0;
+    /* line-height: 28px; */
+    display: inline-block;
+    /* height: 70px !important;
+    widows: inherit; */
     color: white;
     text-shadow: 0px 0px 10px gold,
                  0px 0px 20px gold,
@@ -52,14 +80,28 @@ a:hover {
                  0px 0px 100px gold;
 }
 #special {
-    flex-basis: 100%;
-    /* height: 150px !important;*/
+   
+    height: 210%;
 }
 .display {
-    background: whitesmoke;
-    color: #131313;
-    flex-basis: 20%;
-    min-width: 300px;
-    min-height: 30px;
+    padding-right: 100px;
+    flex-basis: 50%;
+    min-width: 508px;
+    min-height: 50px;
     margin-bottom: 20px;
+    text-align: right;
+    background: #243238e8;
+    color: white;
+    text-shadow: 0px 0px 10px rgb(255, 217, 0),
+                 0px 0px 20px gold,
+                 0px 0px 30px gold,
+                 0px 0px 40px gold,
+                 0px 0px 50px gold,
+                 0px 0px 60px gold,
+                 0px 0px 70px gold,
+                 0px 0px 80px gold,
+                 0px 0px 90px gold,
+                 0px 0px 100px gold,
+                 0px 0px 110px gold,
+                 0px 0px 120px gold;
 }

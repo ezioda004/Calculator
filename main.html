@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
@@ -13,9 +14,11 @@
     
 </head>
 <body>
+    <h1 class = "text-center">Calculator</h1>
     <div class = "main">
         <div class = "text-center">
-            <p class = "display">test</p>
+            <p class = "display"><span>as</span>
+            </p>
         </div>
         <ul class = "text-center">
             <li><a href="#" id = "reset">AC</a></li>
@@ -39,13 +42,16 @@
             <li><a class = "input" href="#">1</a></li>
             <li><a class = "input" href="#">2</a></li>
             <li><a class = "input" href="#">3</a></li>
-            <li class = "operator" id = "special" ><a href="#">+</a></li>
         </ul>
+        <ul>
+                <li class = "operator" id = "special" ><a href="#">+</a></li>
+        </ul>
+           
+        
         <ul class = "text-center">
             <li><a class = "input" href="#">.</a></li>
             <li><a class = "input" href="#">0</a></li>
             <li><a id = "result" href="#">=</a></li>
-            <li></li>
             <!-- <li><a class = "operator" href="#">+</a></li> -->
         </ul>
     </div>

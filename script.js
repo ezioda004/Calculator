@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $(".display").text("0");
+    let total = "";
     let savedVal = [];
     $(".input").on("click", function(event){
         event.preventDefault();
@@ -8,15 +9,19 @@ $(document).ready(function(){
             x = x;
         }
         else {
+            // x = x.replace(/[+-/*%]/, "");
+            // console.log(x);
+            // $(".display").text(x);
             x = $(".display").text() + x;
         }
-        
+        total += x;
+        $("span").text(total);
         $(".display").text(x);
     });
     $("#back").on("click", function(event){
         event.preventDefault();
         let x = $(".display").text();
-        console.log(x);
+        // console.log(x);
         $(".display").text(x.substring(0, x.length-1));
 
     })
@@ -25,7 +30,7 @@ $(document).ready(function(){
         let firstVal = $(".display").text();
         let operator = $(this).text().toLowerCase();
         // savedVal.push(1);
-        console.log(operator);
+        // console.log(operator);
         if (operator == "+"){
             // savedVal.push(1);
             if (savedVal.length === 0){
@@ -80,8 +85,11 @@ $(document).ready(function(){
                 savedVal[0] = y+operator;
             }
         }
+        total += operator;
+        $("span").text(total);
         console.log(savedVal);
-        $(".display").text("  ");
+        // $(".display").text(operator);
+        $(".display").text("");
         
     });
     $("#result").on("click", function(event){
