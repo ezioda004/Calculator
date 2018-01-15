@@ -1,20 +1,30 @@
 $(document).ready(function(){
     $(".display").text("0");
+    let isReset = false;
     let total = "";
     let savedVal = [];
     $(".input").on("click", function(event){
         event.preventDefault();
         let x = $(this).text();
-        if ($(".display").text() == 0){
+        total+=x;
+        let y = $(".display").text().replace(/[-/%x+]/, "");
+        // console.log(y);
+        console.log(isReset);
+        if (isReset){
+            console.log(x);
+            x=x;
+            isReset = false;
+        }
+        else if ($(".display").text() == 0){
             x = x;
         }
         else {
-            // x = x.replace(/[+-/*%]/, "");
+            
             // console.log(x);
             // $(".display").text(x);
-            x = $(".display").text() + x;
+            x = y + x;
         }
-        total += x;
+        
         $("span").text(total);
         $(".display").text(x);
     });
@@ -23,6 +33,8 @@ $(document).ready(function(){
         let x = $(".display").text();
         // console.log(x);
         $(".display").text(x.substring(0, x.length-1));
+        total = total.substring(0, total.length-1);
+        $("span").text(total);
 
     })
     $(".operator").on("click", function(event){
@@ -88,24 +100,31 @@ $(document).ready(function(){
         total += operator;
         $("span").text(total);
         console.log(savedVal);
-        // $(".display").text(operator);
-        $(".display").text("");
+        $(".display").text(operator);
+        // $(".display").text("");
         
     });
     $("#result").on("click", function(event){
+        isReset = true;
+        console.log(isReset);
         event.preventDefault();
         savedVal.push($(".display").text());
         // console.log(eval(savedVal.join("")));
         $(".display").text(Math.round(eval(savedVal.join(""))*100)/100);
         // savedVal = savedVal.join("").split(/[+-/*%]/);
-        console.log(savedVal);
         savedVal = [];
+        total = "";
+        
         
     });
     $("#reset").on("click", function(){
         event.preventDefault();
         savedVal = [];
+        total = "";
         $(".display").text("0");
+        $("span").text("");
     });
 
 });
+
+    
